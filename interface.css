@@ -1,0 +1,287 @@
+@media screen and (min-width: 720px)
+{
+	button{
+		border-radius: 10%;
+		margin: 0.5em;
+		font-size: 2rem;
+	}
+	.img_fond{
+		height: calc(100vh - 20px);
+	}
+	.flex{
+		display: flex;
+	}
+	.relative{
+		position: relative;
+	}
+	.header {
+		position: absolute;
+		top: 0;
+		left: 0;
+		height: 100%;
+		width: 100%;
+	}
+	.zi-1{
+		z-index: -1;
+	}
+	.adp{
+		object-fit: cover;
+	}
+	.titre{
+		text-align: center;
+		margin: auto;
+		flex-direction: column;
+	}
+	h1{
+		font-size: 5em;
+		
+	}
+	canvas{
+		width: 600px;
+		height: 500px;
+	}
+	.test{
+		top: 0;
+    	left: 37em;
+	}
+}
+@media screen and (max-width: 630px){
+	canvas{
+		width: 352px;
+	}
+}
+body{
+	background-color:#5E7523;
+}
+.titre{
+	position: relative;
+}
+/*Style bouton*/
+button{
+	background-color: transparent;
+	border-radius: 10%;
+	margin: 0.5em;
+	font-size: 2rem;
+	position: relative;
+	z-index: 100;
+}
+button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 0%;
+    height: 100%;
+    background: #5E7523;
+    z-index: -1;
+    transition: all .4s;
+}
+button:hover{
+    color: #DEEFE9;
+	cursor: pointer;
+}
+button:hover::before{
+    width: 100%;
+}
+button:hover{
+	background-color: #DEEFE9;
+}
+/*Fin style bouton*/
+
+.img_fond{
+	height: calc(50vh - 20px);
+}
+.flex{
+	display: flex;
+}
+@media screen and (max-width:1366px) {
+	.flex{
+		flex-direction: column;
+	}
+	.taupe{
+		visibility: hidden;
+		transform: translate(0vh,0vh);
+	}
+}
+.relative{
+	position: relative;
+}
+.header {
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: 100%;
+	width: 100%;
+}
+.zi-1{
+	z-index: -1;
+}
+.adp{
+	object-fit: cover;
+}
+.bloc{
+	text-align: center;
+	margin: auto;
+	flex-direction: column;
+}
+h1{
+	font-size: 5em;
+	color: #5E7523;
+	border : 1px solid #5E7523;
+}
+canvas{
+    margin: auto;
+	visibility: hidden;
+}
+#victoire{
+	  position: absolute;
+	  z-index: 100;
+	  font-size: 9em;
+	  padding: 0.1em;
+	  animation: victoireAnim 2s infinite;
+}
+@keyframes victoireAnim{
+	from, to { color: hsl(324, 70%, 45%); }
+    10%      { color: hsl(360, 65%, 45%); }
+    20%      { color: hsl( 36, 80%, 45%); }
+    30%      { color: hsl( 72, 75%, 35%); }
+    40%      { color: hsl(108, 65%, 35%); }
+    50%      { color: hsl(144, 75%, 35%); }
+    60%      { color: hsl(180, 75%, 35%); }
+    70%      { color: hsl(216, 60%, 45%); }
+    80%      { color: hsl(252, 65%, 50%); }
+    90%      { color: hsl(288, 60%, 40%); }
+}
+.nbCoups{
+	font-size: 1.6em;
+}
+#tuto{
+	visibility: hidden;
+	margin-bottom: 10px;
+	background-color: #5E7523;
+	position: absolute;
+	z-index: 100;
+	border: 2px solid #DEEFE9;
+}
+.close{
+	background-color: transparent;
+	width: 5%;
+	text-align: center;
+	border: 1px solid black;
+	border-radius: 25%;
+	margin: auto;
+}
+.close:hover{
+	cursor: pointer;
+}
+#liste{
+	visibility: hidden;
+	margin: 0;
+	list-style: none;
+	width: 0;
+	display: flex
+}
+.titre h1{
+	margin-bottom: 0;
+	margin-top: 10px;
+}
+.club{
+	height: 5vh;
+	width: auto;
+}
+.club:hover{
+	animation: trois 1s infinite;
+}
+@keyframes trois {
+	to{
+		transform : rotate(0deg)
+	}
+	from{
+		transform: rotate(360deg);
+	}
+	
+}
+.voiture{
+	height: 8vh;
+	transform: translateX(-1006px);
+	position: absolute;
+	 
+}
+@media screen and (max-width: 700px) {
+	.voiture{
+		transform: translateX(-500px);
+	}
+	
+}
+@media screen and (max-width:1366px) {
+	.balle{
+		visibility: hidden;
+	}
+	.homme{
+		visibility: hidden;
+	}
+	#tuto{
+		position: relative;
+	}
+}
+.changing{
+	animation-name: avancer;
+	animation-duration: 5s; 
+}
+@keyframes avancer {
+	to{
+		transform: translateX(780px) rotate(35deg);
+	}
+}
+.homme{
+	height: 43vh;
+}
+.homme:hover{
+	transform: translateX(10px);
+	cursor: pointer;
+} 
+.balle{
+	height: 6vh;
+    position: absolute;
+    transform: translate(-5vw, 29vh);
+}
+.balle:hover{
+	animation-name: tire;
+	animation-duration: 5s;
+
+}
+@keyframes tire {
+	to{
+		transform: translateX(1000px);
+	}
+}
+mark{
+	background-color: darkgray;
+}
+a{
+	color: #DEEFE9;
+}
+.red{
+	color: red;
+}
+.blue{
+	color: blue;
+}
+table{
+	border: 2px solid #5E7523;
+	border-collapse: collapse;
+}
+ol{
+	text-align: initial;
+}
+.taupe{
+	height: 5vh;
+    transform: translate(51vw, -29vh);
+}
+.taupe:hover{
+	transform: translate(20vw, -20vh);
+}
+.nbCoups{
+	visibility: hidden;
+}

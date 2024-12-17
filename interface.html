@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Golf</title>
+	<link rel="stylesheet" href="interface.css">
+</head>
+<body>
+	
+
+	<div class="img_fond flex">
+		<img class="header adp zi-1" src="./fond2.jpg" alt="">
+			<div class="bloc flex">
+				<div class="menu">
+					<div class="titre">
+						<!-- <img class="test" src="./golf-flags.png" alt=""> -->
+					<h1>Golf battle bis</h1>
+					</div>
+					<h2>Jeu de golf à un joueur
+						<img class="club" src="./test.gif" alt="">
+					</h2>
+					<img is="vtr" class="voiture" src="golf.png" alt="">
+					<div>
+						<button id="btnStart" 
+						onclick="jouer()">
+							Jouer
+						</button>
+						<button id="btnBack" 
+						onclick="document.getElementById('tuto').style.visibility='visible'">
+							Information
+						</button>
+						<button id="btnRejouer" 
+						onclick="window.location.href = './interface.html';"
+						>
+							Rafraichir
+						</button>
+					</div>
+					<!-- les niveaux -->
+					<ul id="liste">
+						<li>
+							<button onclick="niveau1()">
+							1
+							</button>
+						</li>
+						<li>
+							<button onclick="niveau2()">
+								2
+							</button>
+						</li>
+						<li>
+							<button onclick="niveau3()">
+								3
+							</button>
+						</li>
+					</ul>
+					<!-- fin des niveaux-->
+					<div class="information">
+						<div id="coups" class="nbCoups">Nombre de coups :
+							<span id="nbCoups"></span>
+						</div>
+						<!-- Affiche la victoire -->
+						<div id="victoire">
+						</div>
+						<div id="coups">
+						</div>
+					</div>
+				</div>
+				<canvas id="myCanvas" width="600" height="500"></canvas> 
+				<div id="tuto">
+					<h2>Informations</h2>
+					<h3>Règle du jeu</h3>
+					<p>Le but du jeu est de réussir à mettre la <mark>balle</mark> dans le <mark>trou</mark> avec le <mark>minimum</mark> de coups tout en esquivant les obstacles.</p>
+					<p>Une fois le trou atteint la <mark>victoire</mark> est acquise.</p>
+					<h3>Histoire du golf</h3>
+					<p>Le <a href="https://fr.wikipedia.org/wiki/Golf" target="_blank">golf</a> est un sport de <mark>précision</mark> se jouant en plein air, qui consiste à envoyer une balle dans un trou à l'aide de clubs.</p>
+					<p>Le but du jeu consiste à effectuer, sur un parcours défini, le moins de coups possible.</p> 
+					<p><mark>Précision</mark>, <mark>endurance</mark>, <mark>technicité</mark>, <mark>concentration</mark> sont des qualités primordiales pour cette activité</p>
+					<p><a href="https://www.golf-passion.org/histoire-du-golf/" target="_blank">Les origines du golfs</a></p>
+
+					<h3>Les différents club de golf</h3>
+					<ol>
+						<li>
+							Driver
+							<ul>
+								<li>s'utilise au départ des trous</li>
+								<li>shaft graphite</li>
+								<li>le plus compliqué à jouer</li>
+							</ul>
+						</li>
+						<li>
+							Bois de parcours
+							<ul>
+								<li>utilisé au départ avec un tee comme sur fairway</li>
+								<li>shaft graphite</li>
+								<li>utilisent principalement sur le fairway afin de parcourir une distance maximale</li>
+							</ul>
+						</li>
+						<li>
+							Hybride
+							<ul>
+								<li>shaft graphite</li>
+								<li>plus simple à jouer</li>
+								<li>trajectoire de balle plus haute</li>
+							</ul>
+						</li>
+						<li>
+							Utility ou driving iron
+							<ul>
+								<li>shaft graphite ou acier</li>
+								<li>utilisé généralement au tee de départ</li>
+								<li>vitesse de swing élevée</li>
+							</ul>
+						</li>
+						<li>
+							Série de fers
+							<ul>
+								<li>acier</li>
+								<li>longues distances</li>
+								<li>sur le fairway</li>
+							</ul>
+						</li>
+						<li>
+							Wedge
+							<ul>
+								<li>acier ou en graphite</li>
+								<li>permet de lever la balle très haut</li>
+								<li>pas beaucoup de roulement après l'impact sur le green</li>
+							</ul>
+						</li>
+						<li>
+							Putter
+							<ul>
+								<li>acier</li>
+								<li>permet de faire rouler la balle</li>
+								<li>sur le green, pour mettre la balle dans le trou</li>
+							</ul>
+						</li>
+					</ol>
+
+					<div class="close" 
+					onclick="document.getElementById('tuto').style.visibility='hidden'">
+						close
+					</div>
+				</div>
+			</div>	
+			<div class="tableau">
+				<h2>Choix de la balle</h2>
+					<table>
+						<tr>
+							<td>
+								<h3>Couleur</h3>
+							</td>
+							<td>
+								<h3>Vitesse</h3>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<p class="red">Rouge</p>
+							</td>
+							<td>
+								<button onclick="balle1()">
+								0.09
+								</button>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<p class="blue">Bleu</p>
+							</td>
+							<td>
+								<button onclick="balle2()">
+								0.06
+								</button>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<p class="noir">Noir</p>
+							</td>
+							<td>
+								<button onclick="balle3()">
+								0.04
+								</button>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<p>Reset</p>
+							</td>
+							<td>
+								<button onclick="balleDefaut()">
+								Par défaut
+								</button>
+							</td>
+						</tr>
+					  </table>
+				</div>	
+	</div>
+	<a href="https://wikimonde.com/article/Liste_de_joueurs_de_golf" target="_blank"><img id="homme" class="homme" src="./test.gif" alt=""></a>
+	<img class="balle" src="./balle.png" alt="">
+	<img class="taupe" src="./taupe.png" alt="">
+	
+	
+
+
+</body>
+<script src="interface.js"></script>
+</html>
